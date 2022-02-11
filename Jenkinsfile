@@ -3,11 +3,11 @@
           checkout scm
       }
       stage('Creation user'){
-          
-          "apk add ansible sshpass"
-          "rm -fr /root/.ssh/"
-          "ssh-keygen -q -t rsa -N '' -f /root/ssh/id_rsa"
-          "sshpass -p 'Anteor78!' ssh-copy-id  -o stricthostkeychecking=no root@app-salaire.jeremytc.form"
+          'apk add sshpass'
+          'rm -fr /root/.ssh/'
+	  'ping app-salaire.jeremytc.form'
+          ssh-keygen -q -t rsa -N '' -f '/root/ssh/id_rsa'
+          sshpass -p 'Anteor78!' ssh-copy-id  -o stricthostkeychecking=no 'root@app-salaire.jeremytc.form'
       }
       stage('Ansible') {
         ansiblePlaybook (

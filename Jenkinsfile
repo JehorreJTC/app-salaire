@@ -13,7 +13,8 @@
         ansiblePlaybook (
             inventory: 'hosts.yml',          
             playbook: 'playbook.yml',
-            colorized: true,         
+            colorized: true,
+            become: true,         
         )
       }
   }

@@ -4,7 +4,7 @@
       }
       stage('Creation user'){
           
-          "apk add sshpass"
+          "apk add ansible sshpass"
           "rm -fr /root/.ssh/"
           "ssh-keygen -q -t rsa -N '' -f /root/ssh/id_rsa"
           "sshpass -p 'Anteor78!' ssh-copy-id  -o stricthostkeychecking=no root@app-salaire.jeremytc.form"

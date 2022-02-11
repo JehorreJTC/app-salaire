@@ -1,17 +1,8 @@
 
-
-
-pre_tasks:
-    - debug:
-        msg: 'Beginning db server configuration.'
-
 - name: install serveur web
   hosts: all
   roles:
     - apache
     - mariadb
 
--post_tasks:
-    - debug:
-        msg: 'Db server has been configured.'
 

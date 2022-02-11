@@ -1,6 +1,6 @@
 
 - name: install serveur web
-  hosts: 192.162.195.128
+  hosts: all
   roles:
     - apache
     - mariadb

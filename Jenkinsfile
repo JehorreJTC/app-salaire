@@ -2,9 +2,6 @@
       stage('Clone') {
           checkout scm
       }
-      stage('Creation SSH'){
-	
-      }
       stage('Ansible') {
         'apk add ansible sshpass'
 	'rm -rf /root/.ssh'

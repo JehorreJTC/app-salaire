@@ -22,10 +22,10 @@
     state: enabled
 
 - name: Give writable mode to http folder
- file:
-  path: /var/www/html
-  state: directory
-  mode: 0755
+  file:
+   path: /var/www/html
+   state: directory
+   mode: 0755
 
 - name: Clone a repo with separate git directory
   git:

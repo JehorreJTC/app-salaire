@@ -4,23 +4,10 @@
   yum:
     name:
       - git
-      - epel-release
       - httpd
       - php
       - php-mysql
     state: present
-
-- name: restart and enable systemd nginx service
-  systemd:
-    name: httpd
-    enabled: yes
-    state: restarted
-
-- name: Allow http port
-  firewalld:
-    port: http
-    permanent: yes
-    state: enabled
 
 - name: Give writable mode to http folder
   file:
@@ -31,20 +18,19 @@
 - name: Clone a repo with separate git directory
   git:
     repo: https://github.com/ludovic-tech/app-php.git
-    dest: /var/www/html
+    dest: /var/www/html/app-php
 
-
-- name: Allow http port
+- name: permit traffic in default zone for https service
   firewalld:
-    port: http
+    service: http
     permanent: yes
     state: enabled
 
-- name: restart and enable systemd nginx service
+- name: restart and enable systemd apache service
   systemd:
-    name: httpd
-    enabled: yes
-    state: enabled
+   name: httpd
+   enabled: yes
+   state: restarted
 
 # tasks file for apache
 

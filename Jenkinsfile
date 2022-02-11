@@ -12,7 +12,7 @@
           else
               ssh-keygen -q -t rsa -N \'\' -f /root/.ssh/id_rsa
           fi
-          sshpass -p \'Anteor78!\' ssh-copy-id  -o stricthostkeychecking=no root@app-salaire.jeremytc.form
+          sshpass -p \'Anteor78!\' ssh-copy-id  -o stricthostkeychecking=no root@192.168.195.129
 
           '''
       }

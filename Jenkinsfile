@@ -12,7 +12,8 @@
           else
               ssh-keygen -q -t rsa -N \'\' -f /root/.ssh/id_rsa
           fi
-          sshpass -p \'Anteor78!\' ssh-copy-id  -o stricthostkeychecking=no root@app-salaire.jeremytc.form.
+          sshpass -p \'admin\' ssh-copy-id  -o stricthostkeychecking=no root@app-salaire.toussoul.form
+
           '''
       }
       stage('Ansible') {
@@ -23,4 +24,3 @@
         )
       }
   }
-

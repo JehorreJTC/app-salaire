@@ -25,11 +25,6 @@
     repo: https://github.com/ludovic-tech/app-php.git
     dest: /var/www/html
 
-- name: Copy file from github
-  copy:
-    src: /var/www/html/
-    dest: /var/www/html/
-
 - name: permit traffic in default zone for https service
   firewalld:
     service: http
